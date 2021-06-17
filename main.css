@@ -482,59 +482,80 @@ h3 {
 
 .card-wrapper {
     display: flex;
-    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-shrink: 1;
     width: 100%;
     height: 100%;
     margin-bottom: 20px;
-    background-color: #9921e8;
+    background-color: #f6f3ee;
+
 }
 
 
 .card-holder {
     margin-top: 50px;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
     align-items: flex-start;
-    background-color: #e5ff00;
-    top: 0;
-    width: 33%;
+    flex-direction: column;
+    background-color: #ffffff;
+    width: 28%;
+    min-width: 10%;
     height: 500px;
-    padding: 20px;
+    margin-right: 25px;
     border-radius: 5px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
-.card-holder>.images {
-    display: block;
-    background-color: #2F154C;
-    top: 0;
 
+
+.img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    max-width: 100%;
+    height: auto;
 }
 
-.card-holder .images>img {
-    height: 150px;
-    width: 100%;
-}
-
-.card-holder .info {
-    background-color: #19d408;
-    width: 100%;
-    height: 200px;
-}
-
-.card-holder .scholar-ship {
-    background-color: #ff1212;
+.info {
+    /* background-color: #19d408; */
     width: 100%;
     height: 100px;
+
 }
 
-.card-holder .user {
-    background-color: #9921e8;
-    width: 100%;
-    height: 50px;
+p {
+    font-weight: 500;
+    padding: 18px;
+    font-size: 15px;
+}
+
+
+.start {
+    /* background-color: #ff1212; */
     display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-right: 20px;
+    display: flex;
+    left: 50px;
+    width: 100%;
+    /* background-color: #ff1212; */
 
+}
 
+.start h5 {
+    /* background-color: #9921e8; */
+    font-weight: 400;
+
+}
+
+.scholar-ship {
+    /* background-color: #ff1212; */
+    padding: 18px;
+    width: 100%;
+    height: 100px;
 }
 
 .card-holder button {
@@ -548,15 +569,108 @@ h3 {
 }
 
 
-.tag-wrapper {
+.tagList {
     display: flex;
-    flex-direction: column;
-    height: 80%;
-    width: 20%;
-    background-color: #F09819;
-    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background-color: #f3f3f3;
+    height: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    color: #5a5a5a;
+    font-weight: 500;
+    border-radius: 2px;
 }
 
+
+.tagHolder {
+    /* background-color: #15ff00; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    height: 60px;
+    flex-wrap: wrap;
+
+}
+
+.start-venue {
+    /* background-color: #15ff00; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    margin-right: 20px;
+    left: 50px;
+    width: 100%;
+    font-weight: 500;
+}
+
+.registerbutton img {
+    border: none;
+    display: inline-block;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: #2F154C;
+    height: 22px;
+    width: 22px;
+    margin-left: 10px;
+}
+
+.registerbutton {
+    display: flex;
+    /* background-color: #F09819; */
+    flex-wrap: wrap;
+
+}
+
+.registerbutton button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    top: 5px;
+    height: 30px;
+    width: 130px;
+    position: relative;
+    border-radius: 5px;
+    background-color: rgb(238, 95, 0);
+    cursor: pointer;
+    color: #ffffff;
+    left: 0px;
+    margin-right: 10px;
+
+}
+
+
+.OtherUser {
+    margin-right: 5px;
+
+}
+
+.holder {
+    /* background-color: #1c0d04; */
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    height: 40px;
+
+}
+
+
+.moreUser {
+    /* background-color: rgb(255, 0, 0); */
+    display: flex;
+    width: 100%;
+}
+
+.moreUser h5 {
+    /* background-color: rgb(60, 255, 0); */
+    font-weight: 400;
+
+}
 
 /* SECTION 3 */
 
