@@ -1,5 +1,34 @@
 const API_URL =
-  "https://api.codingninjas.com/api/v3/events?event_category=WEBINAR&event_sub_category=Archived&tag_list=Interview Preparation&offset=5"
+  "https://api.codingninjas.com/api/v3/events?event_category=ALL_EVENTS&event_sub_category=Upcoming&tag_list=Interview Preparation&offset=0"
+
+//! RETURNING ARRAY OF TAGS
+// const tagApi = " https://api.codingninjas.com/api/v3/event_tags"
+
+// async function getTags() {
+//   // fetching the list of tags using API
+
+//   const res = await fetch(tagApi).catch((err) => {
+//     console.error(err)
+//   })
+
+//   const json1 = await res.json()
+//   console.log(json1)
+
+//   const len1 = json1.data.tags
+//   var x = parseInt(Object.keys(len1).length)
+
+//   var arr = new Array()
+
+//   for (i = 0; i < x; i++) {
+//     const tags1 = json1.data.tags[i]
+//     arr.push(tags1)
+//   }
+//   return arr
+// }
+
+// const tags1 = getTags()
+// console.log(tags1)
+//! RETURNING ARRAY OF TAGS
 
 const rand = document.querySelector(".card-wrapper")
 
@@ -7,22 +36,24 @@ async function getImage() {
   const response = await fetch(
     API_URL +
       new URLSearchParams({
-        event_category: "WEBINAR",
-        event_sub_category: "Archived",
+        event_category: "ALL_EVENTS",
+        event_sub_category: "Upcoming",
         tag_list: "Interview Preparation",
-        OFFSET: 5,
+        OFFSET: 0,
       })
-  )
+  ).catch((err) => {
+    console.error(err)
+  })
 
   const json = await response.json()
-  console.log(json)
+  // console.log(json)
 
   const len = json.data.events
   var x = parseInt(Object.keys(len).length)
   // console.log(typeof x)
   // console.log(x)
 
-  for (i = 0; i < 6; i++) {
+  for (i = 0; i <= x; i++) {
     const coverImage = json.data.events[i].mobile_cover_picture
 
     const cardHolder = document.createElement("div")
@@ -71,8 +102,8 @@ async function getImage() {
     venueHolder.classList.add("start-venue")
 
     const startTm = json.data.events[i].event_start_time
-    console.log(startTm)
-    console.log(typeof startTm)
+    // console.log(startTm)
+    // console.log(typeof startTm)
     const startTime = document.createElement("div")
     startTime.innerText = startTm
     startTime.classList.add("start-venue")
@@ -89,7 +120,7 @@ async function getImage() {
     }
 
     const venue1 = json.data.events[i].venue
-    console.log(venue1)
+    // console.log(venue1)
     const eventVenue = document.createElement("div")
     eventVenue.innerHTML = venue1
     eventVenue.classList.add("start-venue")
@@ -115,7 +146,7 @@ async function getImage() {
     const tagsholder = document.createElement("div")
     tagsholder.classList.add("tagHolder")
 
-    for (j = 0; j <= 8; j++) {
+    for (j = 0; j <= x; j++) {
       if (json.data.events[i].card_tags[j] != null) {
         const tags = json.data.events[i].card_tags[j]
         // console.log(tags)
@@ -141,6 +172,7 @@ async function getImage() {
     const userP = document.createElement("img")
 
     for (k = 0; k < 5; k++) {
+      console.log(i)
       const user = json.data.events[i].registered_users.top_users[k].image_url
       if (user == null) {
         userP.innerText = "IMAGE"
@@ -190,20 +222,29 @@ async function getImage() {
     moreUsers1Holder.appendChild(OtherUser)
     moreUsers1Holder.appendChild(moreUsers1)
 
-
     //! <------ OTHER USERS ENDS HERE ---->
-    
-    
+
     holder.appendChild(userHolder)
     holder.appendChild(userHolder)
     holder.appendChild(buttonHolder)
-    
+
     cardHolder.appendChild(holder)
     cardHolder.appendChild(moreUsers1Holder)
-    
+
     rand.appendChild(cardHolder)
-    
   }
 }
 
 getImage()
+
+//! HIGHLIGHTING TAGS ON SELECTION
+
+const t = document.querySelector(".tags")
+
+console.log(t)
+function highlight() {
+  // t.document.querySelector(".tags")
+  t.classList.add("tagsActive")
+}
+
+t.addEventListener("click", highlight)
