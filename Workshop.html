@@ -15,10 +15,7 @@
     <link rel="icon" href="Images/cdninjas.png" type="image/icon type">
 </head>
 
-<style>
-    #click {
-        color: #F09819;
-    }
+
 </style>
 
 <body>
@@ -26,8 +23,8 @@
 
         <div class="nav-bar">
 
-            <div class="brand-name"><a href="index.html"> <img src="Images/codeingNinjasLogo.svg" alt="Logo"
-                        class="logo"></a></div>
+            <div class="brand-name" style="cursor: pointer;"><a href="index.html"></a> <img
+                    src="Images/codeingNinjasLogo.svg" alt="Logo" class="logo"></a></div>
 
             <a href="#" class="togglebutton">
                 <span class="bar"></span>
@@ -156,11 +153,12 @@
                 <li><a href="Coding.html"><span class="spanelement"> <img src="Images/clickable/3.1.svg">Coding
                             Events</span></a>
                 </li>
-                <li><a href="Bootcamp.html"><span class="spanelement"> <img
-                                src="Images/clickable/bootcamp_events_unselected-5397.png">Bootcamp
+                <li><a href="Bootcamp.html" id="boot"><span class="spanelement"> <img
+                                src="Images/clickable/bootcamp_events_unselected-5397.png" id="boot-active-img">Bootcamp
                             Events</span></a></li>
-                <li><a href="Workshop.html"><span class="spanelement"> <img
-                                src="Images/clickable/workshop_unselected-5395.png">Workshop</span></a></li>
+                <li><a href="Workshop.html" id="work"><span class="spanelement"> <img
+                                src="Images/clickable/workshop_unselected-5395.png"
+                                id="work-active-img">Workshop</span></a></li>
             </ul>
 
         </div>
@@ -320,7 +318,11 @@
 
 </body>
 
-<script src="Scripts/All_Events.js"></script>
+<script src="Scripts/workshop_upcoming.js"></script>
+<script src="Scripts/workshop_archieved.js"></script>
+<script src="Scripts/workshop_fav.js"></script>
+
+
 
 <script src="Scripts/tags.js"></script>
 <script src="Scripts/Hamburger.js"></script>

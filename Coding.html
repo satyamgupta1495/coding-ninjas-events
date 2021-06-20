@@ -15,10 +15,7 @@
     <link rel="icon" href="Images/cdninjas.png" type="image/icon type">
 </head>
 
-<style>
-    #click {
-        color: #F09819;
-    }
+
 </style>
 
 <body>
@@ -26,8 +23,8 @@
 
         <div class="nav-bar">
 
-            <div class="brand-name"><a href="index.html"> <img src="Images/codeingNinjasLogo.svg" alt="Logo"
-                        class="logo"></a></div>
+            <div class="brand-name" style="cursor: pointer;"><a href="index.html"></a> <img
+                    src="Images/codeingNinjasLogo.svg" alt="Logo" class="logo"></a></div>
 
             <a href="#" class="togglebutton">
                 <span class="bar"></span>
@@ -153,11 +150,11 @@
                             Events</a></span></li>
                 <li><a href="Webinars.html" id="web"><span class="spanelement"> <img src="Images/clickable/2.1.svg"
                                 id="web-active-img">Webinars</span></a></li>
-                <li><a href="Coding.html"><span class="spanelement"> <img src="Images/clickable/3.1.svg">Coding
-                            Events</span></a>
+                <li><a href="Coding.html" id="code"><span class="spanelement"> <img src="Images/clickable/3.1.svg"
+                                id="code-active-img">Coding Events</span></a>
                 </li>
-                <li><a href="Bootcamp.html"><span class="spanelement"> <img
-                                src="Images/clickable/bootcamp_events_unselected-5397.png">Bootcamp
+                <li><a href="Bootcamp.html" id="boot"><span class="spanelement"> <img
+                                src="Images/clickable/bootcamp_events_unselected-5397.png" id="boot-active-img">Bootcamp
                             Events</span></a></li>
                 <li><a href="Workshop.html"><span class="spanelement"> <img
                                 src="Images/clickable/workshop_unselected-5395.png">Workshop</span></a></li>
@@ -320,7 +317,9 @@
 
 </body>
 
-<script src="Scripts/All_Events.js"></script>
+<script src="Scripts/coding_upcoming.js"></script>
+<script src="Scripts/coding_archieved.js"></script>
+
 
 <script src="Scripts/tags.js"></script>
 <script src="Scripts/Hamburger.js"></script>

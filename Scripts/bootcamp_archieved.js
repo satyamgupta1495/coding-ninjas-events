@@ -1,16 +1,24 @@
-const API_URL =
-  "https://api.codingninjas.com/api/v3/events?event_category=WEBINAR&event_sub_category=Archived&tag_list=Interview Preparation&offset=5"
+const API_arc =
+  "https://api.codingninjas.com/api/v3/events?event_category=BOOTCAMP_EVENT&event_sub_category=Archived&tag_list=Interview Preparation, Contest Solutions,  Competitive Programming,  Futuristic Tech,  Coding Concepts,  Career Guidance,  Web Development,  Android,  Machine Learning&offset=0"
 
-const rand = document.querySelector(".card-wrapper")
+async function getArchieve() {
+  rand.innerHTML = " "
+  const archive = document.querySelector("#archive")
+  archive.style.color = "#F09819"
 
-async function getImage() {
+  const upcoming = document.querySelector("#upcoming")
+  upcoming.style.color = "#BFBFBF"
+
+  const favourite = document.querySelector("#favourite")
+  favourite.style.color = "#BFBFBF"
+
   const response = await fetch(
-    API_URL +
+    API_arc +
       new URLSearchParams({
-        event_category: "WEBINAR",
+        event_category: "BOOTCAMP_EVENT",
         event_sub_category: "Archived",
         tag_list: "Interview Preparation",
-        OFFSET: 1,
+        OFFSET: 0,
       })
   ).catch((err) => {
     console.error(err)
@@ -21,10 +29,10 @@ async function getImage() {
 
   const len = json.data.events
   var x = parseInt(Object.keys(len).length)
-  // console.log(typeof x)
-  // console.log(x)
+  console.log(typeof x)
+  console.log(x)
 
-  for (i = 0; i < x; i++) {
+  for (i = 0; i <= x; i++) {
     const coverImage = json.data.events[i].mobile_cover_picture
 
     const cardHolder = document.createElement("div")
@@ -73,10 +81,10 @@ async function getImage() {
     venueHolder.classList.add("start-venue")
 
     const startTm = json.data.events[i].event_start_time
-    // console.log(startTm)
-    // console.log(typeof startTm)
+    let date = getallDate(startTm)
+
     const startTime = document.createElement("div")
-    startTime.innerText = startTm
+    startTime.innerText = date
     startTime.classList.add("start-venue")
 
     const fees = json.data.events[i].fees
@@ -117,7 +125,7 @@ async function getImage() {
     const tagsholder = document.createElement("div")
     tagsholder.classList.add("tagHolder")
 
-    for (j = 0; j <= 8; j++) {
+    for (j = 0; j <= x; j++) {
       if (json.data.events[i].card_tags[j] != null) {
         const tags = json.data.events[i].card_tags[j]
         // console.log(tags)
@@ -135,22 +143,20 @@ async function getImage() {
 
     //! <------ USERS STARTS HERE ---->
 
+    let a = 0
     const holder = document.createElement("div")
     holder.classList.add("holder")
-
     const userHolder = document.createElement("div")
     userHolder.classList.add("registerbutton")
-    const userP = document.createElement("img")
+    while (a < 5) {
+      const user = json.data.events[i].registered_users.top_users[a].image_url
 
-    for (k = 0; k < 5; k++) {
-      const user = json.data.events[i].registered_users.top_users[k].image_url
-      if (user == null) {
-        userP.innerText = "IMAGE"
-      } else {
-        userP.src = user
-      }
+      const userP = document.createElement("img")
+      userP.src = user
+
       userHolder.appendChild(userP)
       // cardHolder.appendChild(userHolder)
+      a++
     }
 
     //! <------ USERS ENDS HERE ---->
@@ -205,4 +211,5 @@ async function getImage() {
   }
 }
 
-getImage()
+const archive = document.querySelector("#archive")
+archive.addEventListener("click", getArchieve)
