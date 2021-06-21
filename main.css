@@ -480,6 +480,7 @@ h3 {
 
 .main-bar li {
     list-style: none;
+
 }
 
 .main-bar li a {
@@ -1153,8 +1154,8 @@ p {
     }
 
     .nav-bar {
-    
-        width:100%;
+
+        width: 100%;
         background-color: #2f154c;
     }
 
@@ -1166,22 +1167,22 @@ p {
         position: fixed;
         top: 3rem;
         left: 0;
-        
+
     }
 
 
-    .navbar-list a:before{
+    .navbar-list a:before {
         display: none;
     }
 
 
-    .navbar-links.active{
+    .navbar-links.active {
         display: flex;
     }
 
 
 
-    .main-bar.active{
+    .main-bar.active {
         display: none;
     }
 
@@ -1202,13 +1203,13 @@ p {
 
 
 
-    
+
     .brand-name {
         width: 100%;
         background-color: #2f154c;
     }
 
-    
+
     .brand-name img {
         height: 35px;
         display: block;
@@ -1289,15 +1290,21 @@ p {
 
 
     .section2 .main-bar {
-        width: 100vw;
-
+        width: 100%;
     }
 
     .main-bar ul {
-        /* background-color: #032d6b; */
+        /* background-color: #696b03; */
         width: 100%;
-        padding: 0;
-        margin-left: 2px;
+        margin: 0 10px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+    }
+
+    .main-bar li {
+
+        margin-right: 25px;
     }
 
     .tag-container {
@@ -1317,6 +1324,8 @@ p {
 
     .main-bar2 li {
         display: flex;
+
+
         /* background-color: #1c0d04; */
 
     }
